@@ -18,3 +18,29 @@
   bottom:50%;
 }
  */
+
+:root{
+  --primary-clr: #7086c4e1;
+  --light-clr:#f4f4f4;
+  --dark-clr:#333;
+  /* Created custom name property */
+}
+
+body{
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  font-size:1.5rem;
+  background-color: var(--primary-clr);
+  color: var(--light-clr);
+
+  display: grid;
+  grid:
+    /* defining rows */
+    "header header header header" 
+    "...... lists  acitve  ....." /
+    /* defining columns */
+    1fr minmax(100px,300px) minmax(250px,500px) 1fr;
+  
+
+}
