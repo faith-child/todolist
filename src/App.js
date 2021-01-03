@@ -1,10 +1,11 @@
 
-import './App.css'
-import Todolist from './Todolist.js'
+
+import Todolist from './todolist/Todolist.js'
 function App() {
   return (
    
       <Todolist/>
+   
     
     
   );
