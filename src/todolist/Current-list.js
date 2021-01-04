@@ -68,7 +68,7 @@ class Currentlist extends React.Component{
                                 </button>
                             </div>
                         </div>
-                    </div>
+            </div>
         )
     }
 }

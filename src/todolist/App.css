@@ -1,58 +1,35 @@
-/* .app{
-  align-items: center;
-}
 
-.list-header{
-  font-size: 1.5em;
-  position: absolute;
-  right: 50%;
-  left:50%;
-}
 
- 
-.list{
-  list-style-type: none;
-  position: absolute;
-  right: 50%;
-  left:50%;
-  bottom:50%;
-}
- */
-
-:root{
-  --primary-clr: #7086c4e1;
-  --light-clr:#f4f4f4;
-  --dark-clr:#333;
-  /* Created custom name property */
-}
-
-.body{
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 300;
-  font-size:1.5rem;
-  background-color: var(--primary-clr);
-  color: var(--light-clr);
-
+.app{
   display: grid;
   grid:
-    /* defining rows */
-    "header header header header" auto
-    "...... lists active  ......" auto/
-    /* defining columns */
-    1fr minmax(100px, 300px) minmax(250px, 500px) 1fr;
-  
+  "header header header header" auto
+  "...... lists  active ......" auto/
+  1fr minmax(100px, 300px) minmax(250px, 500px) 1fr;
 
 }
 
 .title{
   grid-area: header;
+  text-align: center;
+  font-size: calc(6vw + 2rem);
+  margin: -0.1em 0 0.5em;
 }
 
 .all-tasks{
-  grid-area: list;
+  grid-area:lists;
+  
+}
+.task-list{
+  line-height: 1.7;
+  font-size: 1.2rem;
+  list-style:circle;
+  padding-left:1.1em;
 }
 
+.active-catergory-list{
+  font-weight:700;
+}
 .todo-list{
-  grid-area:active;
+  grid-area: active;
 }

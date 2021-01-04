@@ -11,10 +11,10 @@ class Alltaskslist extends React.Component {
                     <li className="active-catergory-list">
                                         Work
                     </li>
-                    <li className="active-catergory-list">
+                    <li className="catergory-list">
                                         Grocery
                     </li>
-                    <li className="active-catergory-list">
+                    <li className="catergory-list">
                                         Housework
                     </li>
                 </ul>
