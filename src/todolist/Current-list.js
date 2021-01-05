@@ -6,8 +6,8 @@ class Currentlist extends React.Component{
         return(
             <div className="todo-list">
                         <div className="todo-header">
-                            <h2 className="list-title">Work</h2>
-                            <p className="Task-counter"> 3 tasks remaining</p>
+                            <h2 className="todo-title">Work</h2>
+                            <p className="task-counter"> 3 tasks remaining</p>
                         </div>
                         <div className="todo-body">
                             <div className="Tasks">
@@ -53,7 +53,7 @@ class Currentlist extends React.Component{
                                         placeholder="new task name"
                                     >
                                     </input>
-                                    <button className="btn task ">
+                                    <button className="btn create">
                                         +
                                     </button>
                                 </form>
@@ -61,8 +61,9 @@ class Currentlist extends React.Component{
                             </div>
                             <div className="deleting-task">
                                 <button className="btn delete">
-                                    Clear completed tasks
+                                    Clear completed tasks 
                                 </button>
+
                                 <button className="btn delete">
                                     Delete list
                                 </button>

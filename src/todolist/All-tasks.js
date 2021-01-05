@@ -8,7 +8,7 @@ class Alltaskslist extends React.Component {
             <div className = "all-tasks" >
                 <h2 className="task-list-title"> My list </h2>
                 <ul className="task-list">
-                    <li className="active-catergory-list">
+                    <li className=" active-list catergory-list">
                                         Work
                     </li>
                     <li className="catergory-list">
@@ -25,7 +25,7 @@ class Alltaskslist extends React.Component {
                         placeholder="new list name"
                     >
                     </input>
-                    <button className="btn list">
+                    <button className="btn create">
                                         +
                     </button>
                 </form>
