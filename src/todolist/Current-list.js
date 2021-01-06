@@ -10,7 +10,7 @@ class Currentlist extends React.Component{
                             <p className="task-counter"> 3 tasks remaining</p>
                         </div>
                         <div className="todo-body">
-                            <div className="Tasks">
+                            <div className="task">
                                 <input
                                     type="checkbox"
                                     id="task-1"
@@ -21,7 +21,7 @@ class Currentlist extends React.Component{
                                 </label>
                             </div>
                             {/* task 1  */}
-                            <div className="Tasks">
+                            <div className="task">
                                 <input
                                     type="checkbox"
                                     id="task-2"
@@ -32,7 +32,7 @@ class Currentlist extends React.Component{
                                 </label>
                             </div>
                             {/* task 2 */}
-                            <div className="Tasks">
+                            <div className="task">
                                 <input
                                     type="checkbox"
                                     id="task-3"

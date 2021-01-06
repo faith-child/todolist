@@ -2,6 +2,7 @@
   --primary-clr: #7086c4e1;
   --light-clr:#f4f4f4;
   --dark-clr:#333;
+  --warning-clr:rgb(134, 19, 19);
 }
 
 body {
