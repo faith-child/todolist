@@ -1,6 +1,5 @@
 
 import React from 'react';
-import ReactDOM from 'react-dom';
 import Currentlist from './Current-list.js';
 import Alltaskslist from './All-tasks.js';
 import './App.css';
@@ -22,4 +21,3 @@ class Todolist extends React.Component {
     }
 }
 export default Todolist;
-ReactDOM.render(<Todolist/>,document.getElementById('root'));

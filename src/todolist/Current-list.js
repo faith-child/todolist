@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {Component} from 'react';
 import './App.css';
 
-class Currentlist extends React.Component{
+class Currentlist extends Component{
     render(){
         return(
             <div className="todo-list">
@@ -15,7 +15,7 @@ class Currentlist extends React.Component{
                                     type="checkbox"
                                     id="task-1"
                                 />
-                                <label for="task-1">
+                                <label htmlFor="task-1">
                                     <span className="custom-checker"></span>
                                     Check emails
                                 </label>
@@ -26,7 +26,7 @@ class Currentlist extends React.Component{
                                     type="checkbox"
                                     id="task-2"
                                 />
-                                <label for="task-2">
+                                <label htmlFor="task-2">
                                     <span className="custom-checker"></span>
                                     Print off docs
                                 </label>
@@ -37,7 +37,7 @@ class Currentlist extends React.Component{
                                     type="checkbox"
                                     id="task-3"
                                 />
-                                <label for="task-3">
+                                <label htmlFor="task-3">
                                     <span className="custom-checker"></span>
                                     schedule meeting
                                 </label>
