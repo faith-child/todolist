@@ -19,7 +19,7 @@ class Alltaskslist extends React.Component {
 
     addItem(){
        
-        //create list with unique idea
+        //create list with unique id
         const newItem={
             id: 1 + Math.random(),
             value: this.state.newItem.slice()
@@ -30,7 +30,7 @@ class Alltaskslist extends React.Component {
         // add new list to the list
         list.push(newItem);
 
-        //update state with new list and rest newList input
+        //update state with new list and reset newList input
         this.setState({
             list,
             newItem: ""

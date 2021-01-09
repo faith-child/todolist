@@ -2,63 +2,86 @@ import React, {Component} from 'react';
 import './App.css';
 
 class Currentlist extends Component{
+
+    constructor(props) {
+        super(props);
+        this.state ={
+            newTask:"",
+            list: []
+        }
+    }
+
+    updateInput(key,value){
+        
+        this.setState({ [key]: value});
+    }
+
+    addTask(){
+        // create a task list with a unique id
+        const newTask={
+            id: 1 + Math.random(),
+            value: this.state.newTask.slice()
+        }
+
+        const list = [...this.state.list];
+
+        list.push(newTask);
+
+        this.setState({
+            list,
+            newTask:""
+        })
+    }
     render(){
         return(
             <div className="todo-list">
                         <div className="todo-header">
-                            <h2 className="todo-title">Work</h2>
+                            <h2 className="todo-title" >Work</h2>
                             <p className="task-counter"> 3 tasks remaining</p>
                         </div>
+
+                       
                         <div className="todo-body">
-                            <div className="task">
-                                <input
-                                    type="checkbox"
-                                    id="task-1"
-                                />
-                                <label htmlFor="task-1">
-                                    <span className="custom-checker"></span>
-                                    Check emails
-                                </label>
-                            </div>
-                            {/* task 1  */}
-                            <div className="task">
-                                <input
-                                    type="checkbox"
-                                    id="task-2"
-                                />
-                                <label htmlFor="task-2">
-                                    <span className="custom-checker"></span>
-                                    Print off docs
-                                </label>
-                            </div>
-                            {/* task 2 */}
-                            <div className="task">
-                                <input
-                                    type="checkbox"
-                                    id="task-3"
-                                />
-                                <label htmlFor="task-3">
-                                    <span className="custom-checker"></span>
-                                    schedule meeting
-                                </label>
-                            </div>
-                            {/* task 3 */}
+                                <ul >
+                                    
+                                    {this.state.list.map(task => { 
+                                        return(
+                                            <div className="task">
+                                                <input
+                                                    type="checkbox"
 
+                                                />
+                                                <span className="custom-checker"></span>
+                                                <li key={task.id}>  
+                                                    
+                                                    {task.value}
+                                                </li>
+                                            </div>
+                                            
+                                        );
+                                    })}
+                                    
+                                </ul>
+                        <div className="adding-task">
+                            <form>
+                                <input
+                                    type="text"
+                                    className="new task"
+                                    placeholder="new task name"
+                                    value={this.state.newTask}
+                                    onChange={e => this.updateInput("newTask", e.target.value)}
+                                >
+                                </input>
+                                <button
+                                    className="btn create" 
+                                    onClick={()=> this.addTask()}
+                                    disabled={!this.state.newTask.length}
+                                >
+                                    +
+                                </button>
+                            </form>
 
-                            <div className="adding-task">
-                                <form>
-                                    <input
-                                        type="text"
-                                        className="new task"
-                                        placeholder="new task name"
-                                    >
-                                    </input>
-                                    <button className="btn create">
-                                        +
-                                    </button>
-                                </form>
-
-                            </div>
+                        </div>
                             <div className="deleting-task">
                                 <button className="btn delete">
                                     Clear completed tasks 
