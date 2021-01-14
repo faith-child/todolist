@@ -92,7 +92,7 @@ form{
   font-size: 1.2rem;
   border-bottom: 1px solid currentColor;
   outline: none;
-  transition:border-bottom 150ms ease-in;
+  transition:border-bottom 150ms ease-inul;
   order: 2;
 }
 
@@ -159,11 +159,11 @@ form{
   display: inline-flex;
 }
 
-.task{
+.task {
   position: relative;
   margin-bottom: 1.25em;
 }
-.task::after{
+.task ::after{
   content:"";
   position: absolute;
   right: 0;
@@ -174,7 +174,18 @@ form{
   opacity: 0.1;
 
 }
-.custom-checker{
+
+.tasklist{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+ 
+}
+input[type="checkbox"] {
+  display: none;
+}
+
+input[type="checkbox"]  + span{
   --size: 0.75em;
   display: inline-block;
   width: var(--size);
@@ -187,24 +198,31 @@ form{
   transition: transform 300ms ease-in-out;
 }
 
-.task:hover .custom-checker, [type="checkbox"]:focus + li .custom-checker{
+/* 
+.task:hover, input[type="checkbox"]:focus + span{
   transform: scale(1.2);
   color: #7086c4e1;
+} */
+
+input[input="checkbox"] + span{
+  margin-right:4px;
 }
 
-
-[type="checkbox"]:checked + li .custom-checker{
-  background:  #7086c4e1;
+input[type="checkbox"]:checked + span{
+  background:  #7086c4e1 ;
   border-color:  #7086c4e1;
   box-shadow: inset 0 0 0px 2px white ;
 }
 
-[type="checkbox"]:checked + li {
-  opacity: 0.5;
 
+
+[type="checkbox"]:checked + li + span{
+  transform: scaleX(1);
+  transform-origin: left;
 }
 
-.task li ::after{
+
+.task li :checked{
   content: "";
   position: absolute;
   left: 0;
@@ -216,12 +234,8 @@ form{
   transform-origin: right;
   transform: scaleX(0);
   transition: transform 150ms ease-in-out ;
-}
+} 
 
-[type="checkbox"]:checked + li::after{
-  transform: scaleX(1);
-  transform-origin: left;
-}
 
 .deleting-task{
   display: flex;

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './App.css';
+import TodoItem from './TodoItem';
 
 class Currentlist extends Component{
 
@@ -7,9 +8,13 @@ class Currentlist extends Component{
         super(props);
         this.state ={
             newTask:"",
-            list: []
-        }
+            list: [],
+            
+        };
+
+        
     }
+    
 
     updateInput(key,value){
         
@@ -32,7 +37,30 @@ class Currentlist extends Component{
             newTask:""
         })
     }
+
+
+  handleChange = id => {
+    console.log(id);
+    this.setState(prevState => {
+        const updatedTask = prevState.list.map(task =>{
+            if (task.id === id){
+                return{...task, completed: !TodoItem.completed};
+            }
+            return task;
+        });
+        console.log(updatedTask);
+        return{
+            list: updatedTask
+        };
+    })
+  }
     render(){
+        const todoTaskComponents = this.state.list.map(task => { 
+            return(
+                <TodoItem key={task.id} task={task} handleChange={this.handleChange}/>
+            );
+        });
+        
         return(
             <div className="todo-list">
                         <div className="todo-header">
@@ -42,26 +70,9 @@ class Currentlist extends Component{
 
                        
                         <div className="todo-body">
-                                <ul >
-                                    
-                                    {this.state.list.map(task => { 
-                                        return(
-                                            <div className="task">
-                                                <input
-                                                    type="checkbox"
-
-                                                />
-                                                <span className="custom-checker"></span>
-                                                <li key={task.id}>  
-                                                    
-                                                    {task.value}
-                                                </li>
-                                            </div>
-                                            
-                                        );
-                                    })}
-                                    
-                                </ul>
+                             <div className="task">
+                                 {todoTaskComponents}
+                             </div>
                         <div className="adding-task">
                             <form>
                                 <input
@@ -73,6 +84,7 @@ class Currentlist extends Component{
                                 >
                                 </input>
                                 <button
+                                    type="button"
                                     className="btn create" 
                                     onClick={()=> this.addTask()}
                                     disabled={!this.state.newTask.length}
